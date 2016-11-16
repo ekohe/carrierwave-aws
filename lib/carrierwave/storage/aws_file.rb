@@ -61,7 +61,7 @@ module CarrierWave
 
       def public_url
         if uploader.asset_host
-          "#{uploader.asset_host}/#{path}"
+          URI::encode "#{uploader.asset_host}/#{path}"
         else
           file.public_url.to_s
         end
